@@ -4,7 +4,7 @@ addpath(path_to_top_level_vbr)
 addpath('bayes_0d_funcs')
 vbr_init
 
-% prior distribution settings
+% prior distribution settings -- mantle potential temperature
 priors.T_K_mean = 1200 + 273;  % mean of T_K prior distribution
 priors.T_K_std = 200;  % standard deviation of T_K prior distribution
 
@@ -19,10 +19,20 @@ settings.mcmc_initial_T_K = 0; % set to 0 to draw initial guess from distributio
 settings.mcmc_initial_guess_jump_std = priors.T_K_std; % jump magnitude for the initial guess
 settings.mcmc_acceptance_sc = 1; % acceptance threshold = sc * rand()
 
+% 1d forward model settings
+settings.model.z_min_km = 0.;
+settings.model.z_plate_km = 150.;
+settings.model.z_max_km = 250.;
+settings.model.nz = 25;
+settings.model.dTdz_ad = 0.3; % deg/km
+settings.model.phi_0 = 0.01;
+settings.model.T_sol_K_surf = 1200 + 273;
+settings.model.T_sol_dTdz = settings.model.dTdz_ad*2.5;
+settings.model.P0_GPa = 0.1; % pressure at z_min
+settings.model.z_crust_km = 30;
+
 % set the fixed state variables and single anelastic method
-settings.fixed_SVs.P_GPa = 2;
 settings.fixed_SVs.sig_MPa = 0.1;
-settings.fixed_SVs.phi = 0;
 settings.fixed_SVs.dg_um = 0.01 * 1e6;
 settings.fixed_SVs.f = 1. / 50.;
 settings.fit_a_fixed_TK = 1; % 1 to fixed hidden T_K, 0 to draw from distribution about a hidden mean
@@ -41,20 +51,6 @@ current_model = update_model_predictions(current_model, settings);
 current_model = update_likelihood(current_model, input_data);
 current_model = update_prior_probability(current_model, priors);
 current_model = update_posterior(current_model);
-
-% output some info
-disp("")
-disp("Synthetic observations to fit are:")
-disp(['    Vs = ', num2str(input_data.Vs_mean), ' with stand. dev. ' num2str(input_data.Vs_std)])
-disp(['    Q = ', num2str(input_data.Q_mean), ' with stand. dev. ' num2str(input_data.Q_std)])
-disp("Synthetic observations were calculated at:")
-disp(['    T = ', num2str(input_data.T_mean), ' with stand. dev. ', num2str(input_data.T_std)])
-
-disp("")
-disp(["Initial temeprature guess = ", num2str(current_model.T_K)])
-disp("  with predictions:")
-disp(["   Vs = ", num2str(current_model.Vs)])
-disp(["   Q = ", num2str(current_model.Q)])
 
 % start the itreations
 results.mcmc_samples_T_K = zeros(settings.mcmc_max_iters,1);
