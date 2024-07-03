@@ -2,7 +2,7 @@
 
 A single-parameter bayesian markov-chain monte carlo (mcmc) simulation with 
 Metropolis-Hastings sampling to invert a spot measurements of shear wave velocity 
-and attenuation for the underyling temperature. 
+and attenuation for the underlying temperature. 
 
 ### A brief overview of MCMC + Metropolis-Hastings
 
