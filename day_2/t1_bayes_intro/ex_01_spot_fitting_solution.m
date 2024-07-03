@@ -3,7 +3,6 @@
 % Pick a spot in the western U.S., find possible temperature, melt fraction
 % ranges constrained by Vs, Q measurements
 %
-% FIRST: run ex_00_fetch_some_data
 
 % initialize vbr
 clear; close all;
@@ -13,10 +12,11 @@ vbr_init
 
 % going to use some helper functions in bayesian_fitting example
 addpath(genpath([vbr_path, '/Projects/bayesian_fitting']))
+addpath("extra_functions")
 
 % inspect the data
-filenames.Q = './data/Q_models/Dalton_Ekstrom_2008.mat';
-filenames.Vs = './data/vel_models/Shen_Ritzwoller_2016.mat';
+filenames.Q = get_data_file_path('Q_models', 'Dalton_Ekstrom_2008.mat');
+filenames.Vs = get_data_file_path('vel_models', 'Shen_Ritzwoller_2016.mat');
 
 sr = load(filenames.Vs);
 Vs_Model = sr.Vs_Model;
