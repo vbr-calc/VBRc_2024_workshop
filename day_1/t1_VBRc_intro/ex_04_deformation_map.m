@@ -44,7 +44,7 @@ VBR.in.SV.sig_MPa = sigma;
 sz = size(sigma);
 VBR.in.SV.P_GPa = 3 * ones(sz); % pressure [GPa]
 VBR.in.SV.T_K = 1673 * ones(sz); % temperature [K]
-VBR.in.SV.phi = zeros(sz); % melt fraction / porosity
+VBR.in.SV.phi = zeros(sz); % melt fraction (porosity)
 
 
 % call VBR_spine
