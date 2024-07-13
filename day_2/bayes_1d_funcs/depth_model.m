@@ -10,7 +10,7 @@ function [SVs, settings] = depth_model(T_K_pot, settings)
     nz = settings.nz;
 
     if isfield(settings, 'z_km') == 0
-        z_km = linspace(z_min, z_max, nz);
+        z_km = transpose(linspace(z_min, z_max, nz));
         settings.z_km = z_km;
     end
     z_km = settings.z_km;
@@ -25,8 +25,9 @@ function [SVs, settings] = depth_model(T_K_pot, settings)
     T_sol_K = settings.T_sol_K_surf + z_km * settings.T_sol_dTdz; % arbitrary solidus
 
     % density, pressure
-    P_GPa = zeros(size(z_km));
-    rho = zeros(size(z_km));
+    sz = [numel(z_km), 1];
+    P_GPa = zeros(sz);
+    rho = zeros(sz);
 
     P_GPa(1) = settings.P0_GPa;
     rho_P = san_carlos_density_from_pressure(P_GPa(1));

@@ -8,11 +8,10 @@ function current_model = update_model_predictions(current_model, settings)
 
     % plate model
     [SVs, model_settings] = depth_model(T_K_pot, settings.model);
-
     VBR.in.SV = SVs;
     n1 = settings.model.nz;
-    VBR.in.SV.sig_MPa = full_nd(settings.fixed_SVs.sig_MPa, n1); % differential stress [MPa]
-    VBR.in.SV.dg_um = full_nd(settings.fixed_SVs.dg_um, n1); % grain size [um]
+    VBR.in.SV.sig_MPa = full_nd(settings.fixed_SVs.sig_MPa, [n1,1]); % differential stress [MPa]
+    VBR.in.SV.dg_um = full_nd(settings.fixed_SVs.dg_um, [n1,1]); % grain size [um]
     VBR.in.SV.f = settings.fixed_SVs.f; % frequency [Hz]
 
     VBR = VBR_spine(VBR);

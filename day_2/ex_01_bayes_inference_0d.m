@@ -12,14 +12,14 @@ vbr_init
 
 % going to use some helper functions in bayesian_fitting example
 addpath(genpath([vbr_path, '/Projects/bayesian_fitting']))
-addpath("extra_functions")
+addpath("bayes_inference_funcs")
 
 % inspect the data
 filenames.Q = get_data_file_path('Q_models', 'Dalton_Ekstrom_2008.mat');
 filenames.Vs = get_data_file_path('vel_models', 'Shen_Ritzwoller_2016.mat');
 
-sr = load(filenames.Vs);
-Vs_Model = sr.Vs_Model;
+shen_ritzwoller = load(filenames.Vs);
+Vs_Model = shen_ritzwoller.Vs_Model;
 
 size(Vs_Model.Depth)
 size(Vs_Model.Latitude)
@@ -29,8 +29,8 @@ size(Vs_Model.Vs)
 pcolor(Vs_Model.Vs(:,:,50))
 colorbar()
 
-de = load(filenames.Q);
-Q_Model = de.Q_Model;
+dalton_ekstrom = load(filenames.Q);
+Q_Model = dalton_ekstrom.Q_Model;
 size(Q_Model.Qinv)
 size(Q_Model.Depth)
 pcolor(Q_Model.Longitude, Q_Model.Latitude, Q_Model.Qinv(:,:,10))
