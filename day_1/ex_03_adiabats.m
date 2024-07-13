@@ -1,5 +1,5 @@
 % properties along adiabats
-
+clear; close all
 % 1. initialize the VBRc
 path_to_top_level_vbr=getenv('vbrdir');
 addpath(path_to_top_level_vbr)
@@ -24,11 +24,14 @@ for i_T_pot = 1:numel(T_pots)
     P_GPa(:, i_T_pot) = P_GPa_i;
     rho_z(:, i_T_pot) = rho_z_i;
 end
+
+figure()
 subplot(1,3,1)
 plot(T_K-273, z_km)
+xlabel('T [C]')
 subplot(1,3,2)
 plot(rho_z, z_km)
-
+xlabel('\rho [kg/m^3]')
 % set up VBRc
 VBR.in.elastic.methods_list={'anharmonic';};
 VBR.in.anelastic.methods_list={'eburgers_psp';};
@@ -36,6 +39,7 @@ VBR.in.anelastic.methods_list={'eburgers_psp';};
 VBR.in.SV.rho = rho_z;
 VBR.in.SV.P_GPa = P_GPa;
 VBR.in.SV.T_K = T_K;
+
 % needed for anelastic calculation
 sz = size(T_K);
 VBR.in.SV.sig_MPa = 0.1 * ones(sz); % differential stress [MPa]
