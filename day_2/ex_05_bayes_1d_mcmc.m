@@ -1,7 +1,7 @@
 clear
 path_to_top_level_vbr=getenv('vbrdir');
 addpath(path_to_top_level_vbr)
-addpath('bayes_0d_funcs')
+addpath('bayes_1d_funcs')
 vbr_init
 
 % prior distribution settings -- mantle potential temperature
