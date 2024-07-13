@@ -6,6 +6,14 @@ vbr_path=getenv('vbrdir');
 addpath(vbr_path)
 vbr_init
 
+% if you:
+% downloaded the VBRc before ~5pm Friday July 12
+%                OR
+% you downloaded from the release page
+% then uncomment the following line. This will add functions that
+% over-ride your VBRc behavior.
+%addpath('extra_functions')
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Case 1 : default behavior
 % the analytical andrade method will pull unrelaxed modules from the

@@ -7,6 +7,14 @@ vbr_path=getenv('vbrdir');
 addpath(vbr_path)
 vbr_init
 
+% if you:
+% downloaded the VBRc before ~5pm Friday July 12
+%                OR
+% you downloaded from the release page
+% then uncomment the following line. This will add functions that
+% over-ride your VBRc behavior.
+%addpath('extra_functions')
+
 VBR = struct();
 VBR.in.elastic.methods_list={'anharmonic';};
 VBR.in.anelastic.methods_list={'andrade_analytical';};
