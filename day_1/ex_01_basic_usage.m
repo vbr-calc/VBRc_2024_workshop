@@ -2,7 +2,7 @@
 % basic usage of the VBRc and skills-building
 
 % 1. initialize the VBRc
-path_to_top_level_vbr=getenv('vbrdir');
+path_to_top_level_vbr=getenv('vbrdir');  % or /path/to/top_level/vbr/
 addpath(path_to_top_level_vbr)
 % use the VBRc a lot? add the above to
 % startup.m for matlab (https://www.mathworks.com/help/matlab/ref/startup.html)
@@ -12,6 +12,10 @@ vbr_init
 % 2. initialize the VBR structure
 %    - set the properties and methods
 %    - set thermodynamic state variable arrays  (T, phi)
+
+VBR = struct();
+VBR.in = struct();
+
 vbrListMethods
 
 VBR.in.elastic.methods_list={'anharmonic';'anh_poro';};
