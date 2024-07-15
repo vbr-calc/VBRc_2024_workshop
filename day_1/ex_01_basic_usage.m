@@ -1,8 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % basic usage of the VBRc and skills-building
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 1. initialize the VBRc
-path_to_top_level_vbr=getenv('vbrdir');
+path_to_top_level_vbr=getenv('vbrdir');  % or /path/to/top_level/vbr/
 addpath(path_to_top_level_vbr)
 % use the VBRc a lot? add the above to
 % startup.m for matlab (https://www.mathworks.com/help/matlab/ref/startup.html)
@@ -12,6 +13,10 @@ vbr_init
 % 2. initialize the VBR structure
 %    - set the properties and methods
 %    - set thermodynamic state variable arrays  (T, phi)
+
+VBR = struct();
+VBR.in = struct();
+
 vbrListMethods
 
 VBR.in.elastic.methods_list={'anharmonic';'anh_poro';};
@@ -35,18 +40,23 @@ VBR.in.SV.dg_um = 0.01 * 1e6 * ones(sz); % grain size [um]
 % https://vbr-calc.github.io/vbr/vbrmethods/viscous/
 % https://vbr-calc.github.io/vbr/vbrmethods/elastic/
 % https://vbr-calc.github.io/vbr/vbrmethods/anelastic/
-% or just try and you should get error messages
+% or just try and you should get useful error messages...
 
 % 3. call the VBRc
 VBR = VBR_spine(VBR);
 
 % 4. inspect output
-% tab-complete
+% tab-complete VBR.
 % shape of arrays (frequency dependence)
 % units of output
 disp(fieldnames(VBR.out))
 disp(fieldnames(VBR.out.anelastic))
 disp(fieldnames(VBR.out.anelastic.eburgers_psp))
+
+% for outputs: https://vbr-calc.github.io/vbr/ left hand method types
+
+% units of outputs
+VBR.out.anelastic.eburgers_psp.units
 
 % 5. method citations
 VBR.in.anelastic.andrade_psp.citations

@@ -1,3 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% basic VBRc usage: adjusting parameters, iterating over structures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 clear; close all;
 % 1. initialize the VBRc
 path_to_top_level_vbr=getenv('vbrdir');
@@ -18,7 +22,7 @@ params_hzk = Params_Viscous('HZK2011')
 
 VBR.in.viscous.methods_list={'HK2003'; 'HZK2011'};
 VBR.in.viscous.HZK2011 = Params_Viscous('HZK2011');
-VBR.in.viscous.HZK2011.diff.Q = 100000; % very low, very wrong.
+VBR.in.viscous.HZK2011.diff.Q = 1e5; % very low, very wrong.
 
 VBR.in.SV.T_K = linspace(600, 1600, 100)+273; % temperature [K]
 sz = size(VBR.in.SV.T_K);
@@ -30,8 +34,6 @@ VBR.in.SV.dg_um = 0.01 * 1e6 * ones(sz); % grain size [um]
 
 % 3. call the VBRc
 VBR = VBR_spine(VBR);
-semilogy(VBR.in.SV.T_K-273, VBR.out.viscous.HZK2011.eta_total, 'displayname', 'low act. energy')
-
 
 viscous_fields = fieldnames(VBR.out.viscous)
 nfields = numel(viscous_fields);
