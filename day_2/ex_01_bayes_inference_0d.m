@@ -131,7 +131,7 @@ VBR.in.SV.f = [0.01, 0.1];
 % what method to use? lets do them all
 VBR.in.elastic.methods_list={'anharmonic';'anh_poro';};
 VBR.in.anelastic.methods_list={'eburgers_psp';'andrade_psp';'xfit_mxw'; 'xfit_premelt'};
-
+VBR.in.anelastic.xfit_premelt.include_direct_melt_effect = 1;
 % call the VBRc
 VBR = VBR_spine(VBR);
 
@@ -307,3 +307,29 @@ title('posterior distribution')
 % you love all anelastic methods equally... so calculate the ensemble mean
 % distribution over all anelastic methods
 % (ensemble mean is a weighted sum of distribtuions... equal love = equal weights)
+
+method_list = fieldnames(VBR.out.anelastic);
+
+figure()
+
+ifreq = 1
+P_joint_ensemble = zeros(size(prior_phi));
+for imeth = 1:numel(method_list)
+  method_name = method_list{imeth};
+  V = VBR.out.anelastic.(method_name).V(:,:,ifreq)/1e3;
+  Q = VBR.out.anelastic.(method_name).Q(:,:,ifreq);
+
+  PV = normal_likelihood(V, obs_Vs, sigma_Vs);
+  PQ = normal_likelihood(Q, obs_Q, sigma_Q);
+  joint_likeli = PV .* PQ;
+  Pjoint = joint_likeli .* prior_T .* prior_phi;
+    
+  subplot(5,1,imeth)
+  contourf(test_T-273, test_phi, Pjoint)
+  fval = VBR.in.SV.f(ifreq);
+  title(['posterior distribution ', method_name, ' f=', num2str(fval)])  
+  P_joint_ensemble = P_joint_ensemble + Pjoint; 
+end 
+subplot(5,1,5)
+contourf(test_T-273, test_phi, P_joint_ensemble)
+title('ensemble')  
