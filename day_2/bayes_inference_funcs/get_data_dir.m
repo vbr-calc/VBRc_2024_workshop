@@ -9,7 +9,7 @@ function data_dir = get_data_dir()
     found_it = 0;
     i_el = path_els;
     while found_it == 0 && i_el >= 1
-        if strcmp(sep_path{i_el}, 'VBRc_2024_workshop') == 1
+        if ~isempty(strfind(sep_path{i_el}, 'VBRc_2024_workshop'))
             found_it = i_el;
         end
         i_el = i_el - 1;
@@ -23,3 +23,4 @@ function data_dir = get_data_dir()
     end
 
 end
+
