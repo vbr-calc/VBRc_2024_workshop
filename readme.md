@@ -15,6 +15,8 @@ including:
 * [Workshop schedule](https://docs.google.com/document/d/1s9IZf7_B8hd9vwrgVe7HB32SytMeXd55HOiSatlX3A0) 
 * [Presentation slides](https://drive.google.com/drive/u/0/folders/17NlclKgLbsuViF9TQv7RiP8KHg1HVpVk)
 
+An archived version of the presentations are also available at https://doi.org/10.5281/zenodo.12823718 
+
 ## Requirements 
 
 The code here requires the VBRc (https://vbr-calc.github.io/vbr/).
