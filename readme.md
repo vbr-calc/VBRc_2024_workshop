@@ -3,7 +3,7 @@
 This repository contains example code and exercises for the 2024 VBRc workshop 
 (July 15-18 2024). 
 
-## Workshop Recordings 
+### Workshop Recordings 
 
 The talks and tutorials were recorded and are available for viewing at the following links:
 
@@ -20,7 +20,7 @@ The talks and tutorials were recorded and are available for viewing at the follo
 * Day 4 - Chris Havlin - Open source, the VBRc and YOU! (link not available yet)
 * Day 4 - Tutorial: Setting up your VBRc development environment and submitting pull requests (link not available yet)
 
-## Workshop Documents 
+### Workshop Documents 
 
 Workshop documents are availabe in the [public google drive](https://drive.google.com/drive/u/0/folders/121CV5RznanFgpG4B4-4lIJ2ttlpZhNs9)
 including:
@@ -30,13 +30,10 @@ including:
 
 Archived versions of the presentations are also available at https://doi.org/10.5281/zenodo.12823718 
 
-## Requirements 
+## Repository Description
 
-The code here requires the VBRc (https://vbr-calc.github.io/vbr/).
-
-## Repository layout 
-
-This repository is organized by the day of the workshop: 
+This repository contains starter code used during tutorials in the 2024 VBRc Virtual Workshop. 
+It is organized by the day of the workshop: 
 
 ### Day 1 (`day_1/`) - Basic Usage of the VBRc
 
@@ -69,5 +66,11 @@ Note that each of these scripts have corresponding subdirectories in `day_2` tha
 
 This directory contains an example of using the new theoretical andrade model in the VBRc (`ex_1_generic_andrade.m`) and 
 an example of calculating the complex viscosity (`ex_2_complex_viscosity.m`).
+
+### Requirements 
+
+The code here requires the VBRc (https://vbr-calc.github.io/vbr/).
+
+
 
 
