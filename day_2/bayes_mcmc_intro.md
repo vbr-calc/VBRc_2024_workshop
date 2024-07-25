@@ -1,20 +1,32 @@
-## `bayesian_fiting_0d_mcmc` 
+## Notes on the Bayesian MCMC inversion here 
 
-A single-parameter bayesian markov-chain monte carlo (mcmc) simulation with 
-Metropolis-Hastings sampling to invert a spot measurements of shear wave velocity 
-and attenuation for the underlying temperature. 
+The `mcmc` codes here are single-parameter bayesian markov-chain monte carlo (mcmc) 
+simulations with Metropolis-Hastings (MH) sampling.  
 
-### A brief overview of MCMC + Metropolis-Hastings
+For an introduction to MCMC-MH, checkout the following links (which the code here 
+follow pretty closely): 
 
-insert notes 
+* https://exowanderer.medium.com/metropolis-hastings-mcmc-from-scratch-in-python-c21e53c485b7
+* https://twiecki.io/blog/2015/11/10/mcmc-sampling/
+
+The Bayesian MCMC-MH slides from the VBRc Workshop are available 
+[here](https://docs.google.com/presentation/d/1x1gVN_7Y5PjDdIbOTJ93Il1rykpUOLr-n9Pp_l_KIgU/edit?usp=sharing). 
 
 ### Overview of the code 
+
+The `ex_03_bayes_0d_mcmc_Tonly.m` script sets up a single parameter inversion of 
+spot measurements of Vs and Q for the underyling temperature. 
+
+The code starts with setting the prior distribution for temperature: 
 
 ```matlab
 % prior distribution settings
 priors.T_K_mean = 1200 + 273;  % mean of T_K prior distribution
 priors.T_K_std = 200;  % standard deviation of T_K prior distribution
-``` 
+```
+
+And then the MCMC settings are set: 
+
 ```matlab
 % mcmc settings:
 % for testing, the following are set to small numbers. they should be increased,
@@ -31,6 +43,8 @@ settings.mcmc_acceptance_sc = 1; % acceptance threshold = sc * rand()
 **IMPORTANT**: the version of the code sets `mcmc_max_iters` to a **very** small number in order to 
 easily check that the code runs. You'll want to increase this number. How much is up to you :) 
 
+Finally, the VBRc parameters that are fixed are set: 
+
 ```matlab
 % set the fixed state variables and single anelastic method
 settings.fixed_SVs.P_GPa = 2;
@@ -40,10 +54,10 @@ settings.fixed_SVs.dg_um = 0.01 * 1e6;
 settings.fixed_SVs.f = 1. / 50.;
 settings.fit_a_fixed_TK = 1; % 1 to fixed hidden T_K, 0 to draw from distribution about a hidden mean
 settings.anelastic_method = 'eburgers_psp';
-``` 
+```
 
-### Explorations 
-
+The script `ex_05_bayes_1d_mcmc.m` modifies the `0d` example by using a parametrized 1d temperature model. See `ex_04_plot_model.m` 
+to see how to set the thermal model parameters and plot the result.  
 
 #### Understanding MCMC-MH
 
@@ -70,7 +84,6 @@ Here are some coding exercises that would be interesting!
 3. Re-write the code as a function and then write a script to run and store results from multiple chains. For more of a challenge, parallelize it.
 
 
-
 ### A note on `sample_normal`
  
 The functions in `bayes_0d_funcs` include a drop-in replacement for `normrnd`, called 
@@ -85,13 +98,3 @@ from octave terminal with
 ```
 
 For MATLAB, you'll need to install the [statistics and ML toolbox](https://www.mathworks.com/products/statistics.html) (normally included in educational licenses).
-
-### additional reading 
-
-The following are nice introductions to writing an mcmc sampler from scratch:
-
-* https://exowanderer.medium.com/metropolis-hastings-mcmc-from-scratch-in-python-c21e53c485b7
-* https://twiecki.io/blog/2015/11/10/mcmc-sampling/
- 
-
- 

@@ -47,8 +47,6 @@ disp("")
 disp("Synthetic observations to fit are:")
 disp(['    Vs = ', num2str(input_data.Vs_mean), ' with stand. dev. ' num2str(input_data.Vs_std)])
 disp(['    Q = ', num2str(input_data.Q_mean), ' with stand. dev. ' num2str(input_data.Q_std)])
-disp("Synthetic observations were calculated at:")
-disp(['    T = ', num2str(input_data.T_mean), ' with stand. dev. ', num2str(input_data.T_std)])
 
 disp("")
 disp(["Initial temeprature guess = ", num2str(current_model.T_K)])
