@@ -12,7 +12,7 @@ The talks and tutorials were recorded and are available for viewing at the follo
 * Day 1 - Tutorial: Getting Started with the VBRc (link not available yet)
 * Day 1 - Tutorial: Introcuction to Anelasticity with the VBRc (link not avialabe yet)
 * Day 2 - [Joseph Byrnes - Connecting the Upper Mantle to Volcanoes in the Western United States](https://vimeo.com/990121861/0a9c7026da) (52 minutes)
-* Day 2 - [Tutorial: Interpreting Seismic Obsrevations with teh VBRc](https://vimeo.com/990148743/950d92bbc4) (52 minutes)
+* Day 2 - [Tutorial: Interpreting Seismic Obsrevations with the VBRc](https://vimeo.com/990148743/950d92bbc4) (52 minutes)
 * Day 3 - [Josh Russell -  Unlocking Pacific upper mantle state using the VBRc: What are the roles of mantle grain size and melt?](https://vimeo.com/989709054/551cf48903) (50 minutes)
 * Day 3 - Lightning Talks (link not available yet)
 * Day 3 - Harriet Lau & Chris Havlin - Introducing Apparent Viscosity (link not available yet)
