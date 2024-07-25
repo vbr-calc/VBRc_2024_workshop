@@ -5,7 +5,20 @@ This repository contains example code and exercises for the 2024 VBRc workshop
 
 ## Workshop Recordings 
 
-Links to recordings of talks and tutorials (which use the code here) will be posted soon!
+The talks and tutorials were recorded and are available for viewing at the following links:
+
+* Day 1 - [Welcome to the VBRc Virtual Workshop](https://vimeo.com/990185409/8e5a9e8a08) (5 minutes)
+* Day 1 - [Introducing the VBRc](https://vimeo.com/990199290/e84ba373b5) (18 minutes)
+* Day 1 - Tutorial: Getting Started with the VBRc (link not available yet)
+* Day 1 - Tutorial: Introcuction to Anelasticity with the VBRc (link not avialabe yet)
+* Day 2 - [Joseph Byrnes - Connecting the Upper Mantle to Volcanoes in the Western United States](https://vimeo.com/990121861/0a9c7026da) (52 minutes)
+* Day 2 - [Tutorial: Interpreting Seismic Obsrevations with teh VBRc](https://vimeo.com/990148743/950d92bbc4) (52 minutes)
+* Day 3 - [Josh Russell -  Unlocking Pacific upper mantle state using the VBRc: What are the roles of mantle grain size and melt?](https://vimeo.com/989709054/551cf48903) (50 minutes)
+* Day 3 - Lightning Talks (link not available yet)
+* Day 3 - Harriet Lau & Chris Havlin - Introducing Apparent Viscosity (link not available yet)
+* Day 3 - [Harriet Lau - Inference of the Timescale-Dependent Apparent Viscosity Structure in the Upper Mantle Beneath Greenland](https://vimeo.com/989645387/91554d3f42) (28 minutes)
+* Day 4 - Chris Havlin - Open source, the VBRc and YOU! (link not available yet)
+* Day 4 - Tutorial: Setting up your VBRc development environment and submitting pull requests (link not available yet)
 
 ## Workshop Documents 
 
