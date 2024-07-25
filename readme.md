@@ -9,7 +9,7 @@ The talks and tutorials were recorded and are available for viewing at the follo
 
 * Day 1 - [Welcome to the VBRc Virtual Workshop](https://vimeo.com/990185409/8e5a9e8a08) (5 minutes)
 * Day 1 - [Introducing the VBRc](https://vimeo.com/990199290/e84ba373b5) (18 minutes)
-* Day 1 - Tutorial: Getting Started with the VBRc (link not available yet)
+* Day 1 - [Tutorial: Getting Started with the VBRc](https://vimeo.com/990221721/83db0ebc66) (77 minutes)
 * Day 1 - Tutorial: Introcuction to Anelasticity with the VBRc (link not avialabe yet)
 * Day 2 - [Joseph Byrnes - Connecting the Upper Mantle to Volcanoes in the Western United States](https://vimeo.com/990121861/0a9c7026da) (52 minutes)
 * Day 2 - [Tutorial: Interpreting Seismic Obsrevations with the VBRc](https://vimeo.com/990148743/950d92bbc4) (52 minutes)
