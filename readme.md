@@ -17,8 +17,8 @@ The talks and tutorials were recorded and are available for viewing at the follo
 * Day 3 - [Lightning Talks](https://vimeo.com/999626218/8d948d4564)(60 minutes)
 * Day 3 - [Harriet Lau & Chris Havlin - Introducing Apparent Viscosity](https://vimeo.com/999604158) (41 minutes)
 * Day 3 - [Harriet Lau - Inference of the Timescale-Dependent Apparent Viscosity Structure in the Upper Mantle Beneath Greenland](https://vimeo.com/989645387/91554d3f42) (28 minutes)
-* Day 4 - [Chris Havlin - Open source, the VBRc and YOU!](https://vimeo.com/999641066/3cf0d39487) (60 mins)
-* Day 4 - [Tutorial: Setting up your VBRc development environment and submitting pull requests](https://vimeo.com/999662082/38ab504ead) 
+* Day 4 - [Chris Havlin - Open source, the VBRc and YOU!](https://vimeo.com/999641066/3cf0d39487) (70 minutes)
+* Day 4 - [Tutorial: Setting up your VBRc development environment and submitting pull requests](https://vimeo.com/999662082/38ab504ead)  (54 minutes)
 
 ### Lightning talk session recording
 
